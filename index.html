@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="iso-8859-1">
+    <title>Research Portfolio :: Falah Sheikh</title>
+    <style>
+        /* Base Styles */
+        html {
+            background: #E0E0E0;
+            min-height: 100%;
+            padding: 20px;
+            transition: background 0.5s ease;
+        }
+
+        html.dark { background: #1a1a20; }
+        html.pink { background: #ffafae; }
+        html.ms93 { background: #C0C0C0; }
+
+        body {
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            font-size: 13px;
+            background: #F0F0F0;
+            color: #000000;
+            line-height: 1.3;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid #B4BAC0;
+            transition: all 0.5s ease;
+        }
+
+        /* Theme Base Styles */
+        .dark {
+            background: #24242b;
+            color: #CCCCCC;
+            border-color: #444444;
+        }
+
+        .pink {
+            background: #ffc2c0;
+            color: #000000;
+            border-color: #ff6666;
+        }
+
+        .ms93 {
+            background: #F0F0F0; 
+            color: #000000;
+            border-color: #808080; 
+        }
+
+        /* Header Styles */
+        .header {
+            background: #006699;
+            color: #FFFFFF;
+            padding: 6px;
+            border: 1px solid #00557F;
+            margin: 0 0 10px 0;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .dark .header {
+            background: linear-gradient(135deg, #004466, #002F4B);
+            color: #CCCCCC;
+        }
+
+        .pink .header {
+            background-color: #ff6666;
+            border-color: #ff6666;
+        }
+
+        .ms93 .header {
+            background: #000080; 
+            color: #FFFFFF;
+            border-color: #000080; 
+        }
+
+        .ms93 .header h1 {
+            color: #FFFFFF; 
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background: #E9E9E9;
+            padding: 4px;
+            border: 1px solid #B4BAC0;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .dark .navbar { 
+            background: #30303e; 
+            border-color: #4d4d58; 
+        }
+
+        .pink .navbar { 
+            background: #fcb7b7; 
+            border-color: #ff6666; 
+        }
+
+        .ms93 .navbar {
+            background: #C0C0C0; 
+            border-color: #808080; 
+        }
+
+        .ms93 .navbar a {
+            color: #0000FF;
+        }
+
+        .ms93 .navbar a:hover {
+            color: #FF0000;
+        }
+
+        /* Forum Table Styles */
+        .forumtable {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+            border: 1px solid #B4BAC0;
+            background: #FFFFFF;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .forum-container {
+            padding: 10px;
+            background: #E5EDF3;
+            border: 1px solid #CAD5DE;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        .dark .forumtable {
+            background: #30303e;
+            border-color: #4d4d58;
+        }
+
+        .pink .forumtable {
+            background: #fcd0d0;
+            border-color: #ff6666;
+        }
+
+        .ms93 .forumtable {
+            background: #FFFACD;
+            border-color: #808080;
+        }
+
+        /* Forum Table Header Styles */
+        .forumtable th {
+            background: #006699;
+            color: #ffffff;
+            padding: 8px;
+            border: 1px solid #B4BAC0;
+            font-weight: bold;
+            text-align: left;
+            transition: all 0.3s ease;
+        }
+
+        .dark .forumtable th {
+            background: #003854;
+            color: #CCCCCC;
+            border-color: #444444;
+        }
+
+        .pink .forumtable th {
+            background: #ff6666;
+            color: #ffffff;
+            border-color: #ff0000;
+        }
+
+        .ms93 .forumtable th {
+            background: #000080;
+            color: #FFFFFF; 
+            border-color: #808080;
+        }
+
+        /* Forum Table Cell Styles */
+        .forumtable td {
+            padding: 8px;
+            border: 1px solid #B4BAC0;
+            color: #000000;
+            transition: all 0.3s ease;
+        }
+
+        .dark .forumtable td {
+            color: #CCCCCC;
+            border-color: #444444;
+        }
+
+        .pink .forumtable td {
+            color: #000000;
+            border-color: #ff6666;
+        }
+
+        .ms93 .forumtable td {
+            color: #000000; 
+            border-color: #808080; 
+        }
+
+        /* PhpBB Button Styles */
+        .phpbb-button {
+            background: #C0C0C0; 
+            border: 1px solid;
+            border-color: #dfdfdf #808080 #808080 #dfdfdf;
+            padding: 4px 12px;
+            color: #000000;
+            font-size: smaller;
+            text-transform: capitalize;
+            cursor: pointer;
+            position: absolute;
+            top: 6px;
+            right: 6px;
+            box-shadow: 1px 1px 0px #000000, inset 1px 1px 0px #ffffff;
+        }
+
+        .phpbb-button:hover {
+            background-color: #d7d7d7;
+        }
+
+        .phpbb-button:active {
+            border-color: #808080 #dfdfdf #dfdfdf #808080;
+            box-shadow: 1px 1px 0px transparent, inset 1px 1px 0px #000000;
+            padding: 5px 11px 3px 13px;
+        }
+
+        .ms93 .phpbb-button {
+            background: #C0C0C0; 
+            border-color: #808080; 
+            color: #000000; 
+        }
+
+        .ms93 .phpbb-button:hover {
+            background: #D3D3D3; 
+        }
+
+        .ms93 .phpbb-button:active {
+            background: #A9A9A9; 
+        }
+
+        /* Link Styles */
+        a:link, a:visited {
+            color: #006699;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: #DD6900;
+        }
+
+        .dark a:link, .dark a:visited {
+            color: #DD6900;
+        }
+
+        .dark a:hover {
+            color: #4A9CC3;
+        }
+
+        .pink a:link, .pink a:visited {
+            color: #c10000;
+        }
+
+        .pink a:hover {
+            color: #518937;
+        }
+
+        .ms93 a:link, .ms93 a:visited {
+            color: #0000FF; 
+        }
+
+        .ms93 a:hover {
+            color: #FF0000; 
+        }
+
+        /* Footer Styles */
+        .footer {
+            text-align: center;
+            margin-top: 15px;
+            color: #666666;
+            font-size: 11px;
+            border-top: 1px solid #B4BAC0;
+            padding-top: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .dark .footer {
+            color: #067c8e;
+            border-color: #333333;
+        }
+
+        .pink .footer {
+            color: #ff0000;
+            border-color: #ff9999;
+        }
+
+        .ms93 .footer {
+            color: #000000; 
+            border-color: #808080; 
+        }
+
+        /* Timeline Event Styles */
+        .timeline-event {
+            border-left: 3px solid #B4BAC0;
+            padding-left: 10px;
+            margin: 8px 0;
+            transition: all 0.3s ease;
+        }
+
+        .dark .timeline-event {
+            border-left-color: #4A9CC3;
+        }
+
+        .pink .timeline-event {
+            border-left-color: #ff0000;
+        }
+
+        .ms93 .timeline-event {
+            border-left-color: #808080; 
+        }
+
+        /* Search Bar Styles */
+        .search-bar {
+            display: inline-block;
+            margin-left: 10px;
+        }
+
+        .search-bar input[type="text"] {
+            padding: 5px;
+            width: 200px;
+            border: 1px solid #B4BAC0;
+            transition: all 0.3s ease;
+        }
+
+        .search-bar button {
+            padding: 5px 10px;
+            background: #C0C0C0;
+            border: 1px solid;
+            border-color: #dfdfdf #808080 #808080 #dfdfdf;
+            cursor: pointer;
+            box-shadow: 1px 1px 0px #000000, inset 1px 1px 0px #ffffff;
+            transition: none;
+            font-size: small;
+        }
+
+        .search-bar button:hover {
+            background: #d7d7d7;
+        }
+
+        .search-bar button:active {
+            border-color: #808080 #dfdfdf #dfdfdf #808080;
+            box-shadow: 1px 1px 0px transparent, inset 1px 1px 0px #000000;
+            padding: 6px 9px 4px 11px;
+        }
+
+        .ms93 .search-bar input[type="text"] {
+            background: #FFFFFF; 
+            border-color: #808080; 
+            color: #000000; 
+        }
+
+        .ms93 .search-bar button {
+            background: #C0C0C0; 
+            border-color: #808080; 
+            color: #000000; 
+        }
+
+        .ms93 .search-bar button:hover {
+            background: #D3D3D3; 
+        }
+
+        .ms93 .search-bar button:active {
+            background: #A9A9A9; 
+        }
+
+        /* Modal Styles */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+        }
+
+        .modal-content {
+            position: relative;
+            margin: 50px auto;
+            width: 60%;
+            background: #FFFFFF;
+            border: 1px solid #CCCCCC;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+            transition: all 0.3s ease;
+        }
+
+        .dark .modal-content {
+            background: #30303e;
+            border-color: #8c4400; 
+        }
+
+        .pink .modal-content {
+            background: #ffcccc;
+            border-color: #ff0000;
+        }
+
+        .ms93 .modal-content {
+            background: #FFFFFF; 
+            border: 1px solid #808080; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+        }
+
+        .modal-header {
+            background: #006699;
+            color: #FFFFFF;
+            padding: 8px;
+            border-bottom: 1px solid #00557F; 
+            transition: all 0.3s ease;
+            font-size: large;
+            border-color: #CCCCCC;
+        }
+
+        .dark .modal-header {
+            background: #003854;
+            border-color: #8c4400; 
+        }
+
+        .pink .modal-header {
+            background: #ff6666;
+            color: #ffffff;
+            border-color: #ff0000;
+        }
+
+        .ms93 .modal-header {
+            background: #000080;
+            color: #FFFFFF; 
+            border-bottom: 1px solid #000080; 
+        }
+
+        .modal-close {
+            float: right;
+            cursor: pointer;
+            font-weight: bold;
+            color: #ffffff;
+            background: #ff0000;
+            width: 24px;
+            height: 24px;
+            text-align: center;
+            line-height: 22px;
+            font-family: 'Arial', sans-serif;
+            border: 1px solid;
+            border-color: #dfdfdf #808080 #808080 #dfdfdf;
+            box-shadow: 1px 1px 0px #000000, inset 1px 1px 0px #ffffff;
+            transition: none;
+            font-size: 16px;
+            padding: 0;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .modal-close:hover {
+            background: #ff5151;
+        }
+
+        .modal-close:active {
+            border-color: #808080 #dfdfdf #dfdfdf #808080;
+            box-shadow: 1px 1px 0px transparent, inset 1px 1px 0px #000000;
+            padding: 1px 0 0 1px;
+        }
+
+        .modal-body {
+            padding: 15px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .ms93 .modal-body {
+            background: #FFFACD; 
+            color: #000000; 
+        }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 15px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #E9E9E9;
+            border: 2px solid #B4BAC0;
+            border-radius: 0;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #006699;
+            border: 2px solid #B4BAC0;
+            border-radius: 0;
+        }
+
+        .dark ::-webkit-scrollbar-track {
+            background: #30303e;
+            border-color: #004466;
+        }
+
+        .dark ::-webkit-scrollbar-thumb {
+            background: #DD6900;
+            border-color: #004466;
+        }
+
+        .pink ::-webkit-scrollbar-track {
+            background: #fcb7b7;
+            border-color: #ff6666;
+        }
+
+        .pink ::-webkit-scrollbar-thumb {
+            background: #ff6666;
+            border-color: #ff0000;
+        }
+
+        .ms93 ::-webkit-scrollbar-track {
+            background: #C0C0C0; /* Gray track */
+            border-color: #808080; /* Gray border */
+        }
+
+        .ms93 ::-webkit-scrollbar-thumb {
+            background: #000080; /* Dark blue thumb */
+            border-color: #808080; /* Gray border */
+        }
+
+        /* Mobile Responsive Styles */
+        @media screen and (max-width: 768px) {
+            /* Base adjustments */
+            html {
+                padding: 10px;
+            }
+            
+            body {
+                padding: 10px;
+                font-size: 14px;
+                width: 100%;
+                box-sizing: border-box;
+            }
+            
+            /* Header adjustments */
+            .header {
+                text-align: center;
+                padding: 10px 5px;
+            }
+            
+            .header h1 {
+                font-size: 24px;
+                margin: 0 0 25px 0;
+            }
+            
+            .phpbb-button {
+                position: relative;
+                top: auto;
+                right: auto;
+                margin-top: 10px;
+                display: block;
+                width: 150px;
+                margin: 5px auto;
+            }
+            
+            /* Navbar adjustments */
+            .navbar {
+                padding: 8px 5px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                text-align: center;
+            }
+            
+            .navbar a {
+                margin: 5px 8px;
+                display: inline-block;
+            }
+            
+            /* Table adjustments */
+            .forumtable {
+                font-size: 13px;
+            }
+            
+            .forumtable th {
+                font-size: 15px;
+            }
+            
+            /* Search bar adjustments */
+            .search-bar {
+                display: flex;
+                margin: 10px 0 0 0;
+                width: 100%;
+            }
+            
+            .search-bar input[type="text"] {
+                flex: 1;
+                width: auto;
+                margin-right: 5px;
+            }
+            
+            .search-bar button {
+                width: auto;
+            }
+            
+            th .search-bar {
+                float: none;
+                display: block;
+                margin-top: 8px;
+            }
+            
+            /* Publications header restructuring */
+            #publications th {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            /* Modal adjustments */
+            .modal-content {
+                width: 90%;
+                margin: 20px auto;
+            }
+            
+            .modal-header {
+                padding: 8px;
+                font-size: 16px;
+            }
+            
+            .modal-body {
+                padding: 10px;
+                font-size: 13px;
+            }
+        }
+
+        /* Small phone adjustments */
+        @media screen and (max-width: 480px) {
+            body {
+                padding: 8px;
+                font-size: 13px;
+            }
+            
+            .header h1 {
+                font-size: 20px;
+            }
+            
+            .navbar a {
+                margin: 4px 6px;
+                font-size: 12px;
+            }
+            
+            .publication strong {
+                font-size: 14px;
+            }
+            
+            .forumtable th {
+                font-size: 14px;
+            }
+            
+            /* Timeline and list spacing */
+            .timeline-event {
+                margin: 12px 0;
+                padding-left: 8px;
+            }
+            
+            ul li {
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body class="light">
+    <div class="header">
+        <h1>Falah Sheikh</h1>
+        <button class="phpbb-button" onclick="toggleTheme()">Switch Style</button>
+    </div>
+
+    <div class="navbar">
+        <a href="#profile">Profile</a> | 
+        <a href="#current">Current Research</a> | 
+        <a href="#publications">Publications</a> | 
+        <a href="#timeline">Timeline</a> | 
+        <a href="#contact">Contact</a> 
+        <!-- <a href="./falah_research_cv/falah_research_cv.html">Resume</a> -->
+    </div>
+
+    <!-- Profile Section -->
+    <table class="forumtable" id="profile">
+        <tr>
+            <th colspan="2">Research Profile</th>
+        </tr>
+        <tr>
+            <td width="30%"><strong>Affiliation:</strong></td>
+            <td>University of Calgary, Advanced Database Systems and Applications (ADSA) Lab.</td>
+        </tr>
+        <tr>
+            <td><strong>Research Field:</strong></td>
+            <td>Computer Science</td>
+        </tr>
+        <tr>
+            <td><strong>Focus Areas:</strong></td>
+            <td>Machine Learning, Deep Learning, AI</td>
+        </tr>
+    </table>
+
+    <!-- Current Research -->
+    <table class="forumtable" id="current">
+        <thead>
+            <tr>
+                <th>Current Research</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <ul style="list-style-type: none; padding: 0; margin: 0;">
+                        <!-- xplainable Lightweight AI for Early Alzheimer's Detection Using MRI Scans -->
+                        <li>
+                            <strong>Explainable Lightweight AI for Early Alzheimer's Detection Using MRI Scans</strong><br>
+                            Combining lightweight AI models with explainability techniques such as Grad-CAM to address the challenge of early Alzheimer's detection.
+                        </li>
+                        <!-- Adaptive Energy-Aware Round Robin Scheduling: A Dynamic Time Quantum Approach Integrating Battery Levels and Process Burst Characteristics -->
+                        <li style="margin-top: 10px;"> 
+                            <strong>Adaptive Energy-Aware Round Robin Scheduling: A Dynamic Time Quantum Approach Integrating Battery Levels and Process Burst Characteristics</strong><br>
+                            Proposing an energy-efficient Round Robin scheduling approach that dynamically adjusts time quantum based on battery levels and process burst characteristics.
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>    
+
+    <!-- Publications -->
+    <table class="forumtable" id="publications">
+        <tr>
+            <th>
+                Publications
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Search publications...">
+                    <button onclick="searchPublications()">Search</button>
+                </div>
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <div id="publicationsList">
+                    <div class="publication">
+                        <strong>Automated Lunar Age Detection Using Convolutional Neural Networks [Pending]</strong><br>
+                        <!-- F. Sheikh et al., Scientific Reports Nature Journal 2025<br> -->
+                        [<a href="#" class="abstract-link" data-abstract="This paper proposes an image classification-based technique to determine the moon's age in a synodic month from a lunar picture. 
+                        Prior to this study, no image classification-based approach has been applied to determine the moon's age. Historically, mathematical methods have been employed for this purpose, dating back to the Babylonian era. 
+                        Our approach utilizes CNNs (Convolutional Neural Networks) to analyze lunar images. We utilized a pre-trained ResNet18 architecture for transfer learning, leveraging its pre-trained weights to adapt to the new lunar dataset. 
+                        The dataset was collected from Nasa's moon phase and liberation website using the requests and selenium libraries. 
+                        At the end, we trained and evaluated different models using accuracy metrics and confusion matrices.">Abstract</a>] 
+                        <!-- [<a href="#">Paper</a>] -->
+                    </div>
+                    <!-- Add more publications here -->
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <!-- Timeline -->
+    <table class="forumtable" id="timeline">
+        <tr>
+            <th>Academic Timeline</th>
+        </tr>
+        <tr>
+            <td>
+                <!-- <div class="timeline-event">
+                    <strong>2025</strong> - Published co-author in Scientific Reports, a Nature journal
+                </div> -->
+                <div class="timeline-event">
+                    <strong>2022</strong> - Began B.Sc. at University of Calgary
+                </div>
+            </td>
+        </tr>
+    </table>
+    <!-- Awards -->
+    <table class="forumtable" id="awards">
+        <thead>
+            <tr>
+                <th>Awards</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <ul style="list-style-type: none; padding: 0; margin: 0;">
+                        <!-- Other -->
+                        <!-- <li> 
+                            <strong>Other</strong><br>
+                            text
+                        </li> -->
+                        <!-- Alberta Innovates Summer Research Studentship -->
+                        <!-- Add this to li <li style="margin-top: 10px;"> -->
+                        <li>
+                            <strong>Alberta Innovates Summer Research Studentship</strong><br>
+                            Awarded $7,500 CAD in funding for a 16-week independent research project on efficient and interpretable AI models forearly Alzheimer’s diagnosis                        
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>  
+
+    <!-- Contact -->
+    <table class="forumtable" id="contact">
+        <tr>
+            <th>Contact</th>
+        </tr>
+        <tr>
+            <td>
+                Personal Email: <a href="mailto:falah.h.sheikh@gmail.com" target="_blank">falah.h.sheikh@gmail.com</a><br>
+                University Email: <a href="mailto:sheikhfalah.sheikhha@ucalgary.ca" target="_blank">sheikhfalah.sheikhha@ucalgary.ca</a><br>
+                ORCID iD: <a href="https://orcid.org/0009-0003-8770-6806" target="_blank">0009-0003-8770-6806</a>
+            </td>
+        </tr>
+    </table>
+
+    <!-- Abstract Modal -->
+    <div class="modal-overlay" id="abstractModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modal-close" onclick="closeModal()">✕</span>
+                <h3>Abstract</h3>
+            </div>
+            <div class="modal-body" id="abstractContent"></div>
+        </div>
+    </div>
+
+    <div class="footer"> 
+        Falah Sheikh © 2025
+    </div>
+
+    <script>
+        let currentTheme = 'light';
+        const themes = ['light', 'dark', 'pink', 'ms93']; // Add 'ms93' to the list of themes
+
+        function toggleTheme() {
+            const body = document.body;
+            const htmlElement = document.documentElement;
+
+            // Cycle through themes
+            currentTheme = themes[(themes.indexOf(currentTheme) + 1) % themes.length];
+            body.className = currentTheme;
+            htmlElement.className = currentTheme === 'light' ? '' : currentTheme;
+
+            // Save theme to localStorage
+            try {
+                localStorage.setItem('theme', currentTheme);
+            } catch (e) {
+                console.log("localStorage not available");
+            }
+        }
+
+        // Initialize theme
+        function initializeTheme() {
+            try {
+                const savedTheme = localStorage.getItem('theme');
+                if (savedTheme && themes.includes(savedTheme)) {
+                    currentTheme = savedTheme;
+                    document.body.className = savedTheme;
+                    document.documentElement.className = savedTheme === 'light' ? '' : savedTheme;
+                }
+            } catch (e) {
+                document.body.className = 'light';
+            }
+        }
+
+        initializeTheme();
+
+        // Search function
+        function searchPublications() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const publications = document.querySelectorAll('.publication');
+            publications.forEach(pub => {
+                const text = pub.textContent.toLowerCase();
+                if (text.includes(input)) {
+                    pub.style.display = '';
+                } else {
+                    pub.style.display = 'none';
+                }
+            });
+        }
+
+        // Modal functions
+        document.querySelectorAll('.abstract-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                document.getElementById('abstractContent').textContent = e.target.dataset.abstract;
+                document.getElementById('abstractModal').style.display = 'block';
+            });
+        });
+
+        function closeModal() {
+            document.getElementById('abstractModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            if (event.target.id === 'abstractModal') closeModal();
+        }
+    </script>
+</body>
+</html>

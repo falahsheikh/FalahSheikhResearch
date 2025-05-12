@@ -1,0 +1,5 @@
+This paper proposes an image classification-based technique to determine the moon's age in a synodic month from a lunar picture. 
+Prior to this study, no image classification-based approach has been applied to determine the moon's age. Historically, mathematical methods have been employed for this purpose, dating back to the Babylonian era. 
+Our approach utilizes CNNs (Convolutional Neural Networks) to analyze lunar images. We utilized a pre-trained ResNet18 architecture for transfer learning, leveraging its pre-trained weights to adapt to the new lunar dataset. 
+The dataset was collected from Nasa's moon phase and liberation website using the requests and selenium libraries. 
+At the end, we trained and evaluated different models using accuracy metrics and confusion matrices.
